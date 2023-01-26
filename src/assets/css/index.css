@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&display=swap');
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'DM Mono', monospace;
+}
+html, body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(55deg,
+  hsl(var(--hue-Analog1), var(--saturation), var(--lightness-dark)),
+  hsl(var(--hue-Analog2), var(--saturation), var(--lightness-dark)));
+}
+/* #root{
+  height: 100%;
+} */

@@ -1,0 +1,165 @@
+:root{
+    --column-count: 3;
+}
+.Menu-Filter{
+    width: 100%;
+}
+.Menu-Filter ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 1% 5%;
+    height: 100%;
+}
+.Menu-Filter ul li{
+    /* margin: 0px 5px; */
+    position: relative;
+    padding: 1%;
+    --id-menu: 1;
+    animation: startUp 0.7s ease-out calc(0.2s * var(--id-menu)) 1 normal both;
+    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+}
+.Menu-Filter ul li button{
+    background: none;
+    border: 0;
+    font-size: calc(10px + 2vmin);
+    font-weight: 500;
+    cursor: pointer;
+}
+.Menu-Filter ul li:hover button,
+.Menu-Filter ul li.selected button{
+    color: white;
+}
+.Menu-Filter ul li.selected button{
+    cursor: default;
+}
+.Menu-Filter ul li::after{
+    content: ' ';
+    width: 0;
+    height: 5px;
+    border-radius: 2px;
+    position: absolute;
+    bottom: 0;
+    --width-after: 70%;
+    left: 50%;
+    background: hsla(var(--hue-Analog1), var(--saturation), var(--lightness-light), 1);
+    transition: width .25s, left .25s;
+}
+.Menu-Filter ul li:hover::after,
+.Menu-Filter ul li.selected::after{
+    left: calc((100% - var(--width-after)) / 2);
+    width: var(--width-after);
+}
+.Menu-List{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(var(--column-count), 1fr);
+    grid-auto-rows: min-content;
+    gap: 15px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    font-size: calc(10px + 1vmin);
+}
+.MenuItem{
+    background: #ffffff67;
+    width: 100%;
+    padding: 2%;
+    border-bottom: 2px solid white;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    gap: 10px;
+    position: relative;
+    left: calc(var(--column-count * -100%));
+    animation: startLeft 0.97s ease-out calc(0.2s * var(--id-Item)) 1 normal both;
+}
+.MenuItem .infoBox,
+.MenuItem .cant-priceBox,
+.MenuItem .cant-priceBox .priceBox{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+.MenuItem .infoBox{
+    border-bottom: 2px dashed hsla(var(--hue-Primary), var(--saturation), 20%, 0.7);
+}
+.MenuItem button{
+    border: 0;
+    background: transparent;
+    backdrop-filter: saturate(10) brightness(0.7);
+    transition: backdrop-filter 0.5s, transform 0.25s;
+    padding: 10px;
+    margin: 0px 5%;
+    font-size: calc(10px + 1vmin);
+    cursor: pointer;
+}
+.MenuItem button:hover{
+    backdrop-filter: saturate(10) brightness(0.9);
+}
+.MenuItem button:active{
+    transform: scale(0.9);
+}
+/*.MenuItem .cant-priceBox .priceBox{
+    width: 110px;
+    height: 80%;
+    padding: 3px;
+    border-bottom: 2px dotted hsla(var(--hue-Primary), var(--saturation), 20%, 0.7);
+}
+.MenuItem .cant-priceBox .cantBox{
+    height: 45px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+}
+.MenuItem .cant-priceBox .cantBox input{
+    width: 80px;
+    display: block;
+    text-align: right;
+    font-size: 16px;
+    outline: none;
+    border: 0;
+    background: hsla(var(--hue-Primary), var(--saturation), var(--lightness-light), 0.4);
+}
+.MenuItem .cant-priceBox .cantBox button{
+    font-size: calc(15px + 2vmin);
+    background: hsla(var(--hue-Analog2), var(--saturation), var(--lightness-light), 0.5);
+    width: 45px;
+    --border-radius: 5px;
+    border-radius: var(--border-radius) 0px 0px var(--border-radius);
+    border: 0;
+    transition: filter 0.15s ease-in-out;
+}
+.MenuItem .cant-priceBox .cantBox button:last-child{
+    border-radius: 0px var(--border-radius) var(--border-radius) 0px;
+}
+.MenuItem .cant-priceBox .cantBox button:hover{
+    filter: brightness(0.8);
+}
+.MenuItem .cant-priceBox .cantBox button:active{
+    filter: brightness(1.3);
+}
+.MenuItem .cant-priceBox .cantBox input:focus{
+    background: hsl(var(--hue-Primary), var(--saturation), var(--lightness-light));
+}
+*/
+li{
+    list-style: none;
+}
+
+@keyframes startUp {
+    from{
+        top: -300%;
+    }
+    to{
+        top: 0;
+    }
+}
+@keyframes startLeft {
+    from{
+        right: -400%;
+    }
+    to{
+        right: 0;
+    }
+}

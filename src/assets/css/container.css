@@ -1,0 +1,22 @@
+.great-container{
+    height: 100%;
+    padding: 1%;
+    overflow: hidden;
+}
+.container{
+    background: #ffffff44;
+    padding: 1%;
+    height: 100%;
+    /* width: 100%; */
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+.container h1{
+    margin-bottom: 15px;
+}
+.container.inicio{
+    justify-content: space-between;
+}

@@ -1,0 +1,71 @@
+.App{
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-rows: 65px 1fr;
+}
+header {
+  background: hsl(var(--hue-Primary), var(--saturation), 10%);
+  width: 100vw;
+  height: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  border: 0;
+}
+.title-logo{
+  height: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px;
+  font-size: calc(10px + 2vmin);
+}
+.title-logo span{
+  color: hsl(var(--hue-Primary), var(--saturation), var(--lightness-light));
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.title-logo img{
+  height: 100%;
+}
+.navbar{
+  width: 35%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.navbar button{
+  display: block;
+  height: 100%;
+  width: 100%;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  font-size: calc(10px + 1.5vmin);
+  color: inherit;
+  transition: background 0.15s, font-size 0.2s;
+}
+.navbar button:hover{
+  transition: background 0.35s;
+  background: hsla(var(--hue-Analog2), var(--saturation), var(--lightness-dark), 0.42);
+}
+.navbar button:active,
+.navbar button.OnPage{
+  transition: background 0.25s, font-size 0.2s;
+  transition-delay: font-size 1s;
+  background: hsl(var(--hue-Analog2), var(--saturation), var(--lightness-light));
+  color: black;
+  font-size: calc(10px + 2vmin);
+  cursor: default;
+}
+input{
+  outline: none;
+}
+input[type = 'number']::-webkit-inner-spin-button,
+input[type = 'number']::-webkit-outer-spin-button{
+  -webkit-appearance: none;
+  margin: 0;
+}

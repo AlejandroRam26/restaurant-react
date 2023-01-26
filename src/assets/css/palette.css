@@ -1,0 +1,17 @@
+/*
+Crimson: hsl(348, 83%, 47%)
+Orange: hsl(39, 100%, 50%));}
+*/
+:root{
+    --hue-Primary:220;
+    --saturation: 83%;
+    --lightness-center:47%;
+    --lightness-light:calc(var(--lightness-center) + 10%);
+    --lightness-dark:calc(var(--lightness-center) - 10%);
+    --hue-Analog1: calc(var(--hue-Primary) - 30);
+    --hue-Analog2: calc(var(--hue-Analog1) - 300);
+    /*
+    hsl(var(--hue-Primary), var(--saturation), var(--lightness-center))
+    hsla(var(--hue-Primary), var(--saturation), var(--lightness-center), 1)
+    */
+}
