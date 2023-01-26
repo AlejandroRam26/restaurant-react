@@ -24,5 +24,10 @@ export const MenuList = [
     {item: 'Uvas', price: 1800, category: 'Frutas'},
     {item: 'Cerezas', price: 1800, category: 'Frutas'},
     {item: 'Pera', price: 1800, category: 'Frutas'},
-    {item: 'Manzana', price: 1800, category: 'Frutas'}
+    {item: 'Manzana', price: 1800, category: 'Frutas'},
+    {item: 'Gasesa', price: 270.56, category: 'Bebidas'},
+    {item: 'Agua Sabor Pera', price: 270.56, category: 'Bebidas'},
+    {item: 'Agua Sabor Manzana', price: 270.56, category: 'Bebidas'},
+    {item: 'Agua Sabor Pomelo', price: 270.56, category: 'Bebidas'},
+    {item: 'Agua Sabor MulriFruta', price: 270.56, category: 'Bebidas'}
 ]

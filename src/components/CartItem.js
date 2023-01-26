@@ -9,16 +9,24 @@ export const CartItem = ({item = {item: 'Item', price: 0, category: null, count:
       loadTotal();
     };
     const DencrementCount = () => {
-
+      if (Cant > 1) {
+        console.log('Decrement - Eliminar');
+      }
       setCant(Cant - 1);
       loadTotal(-1);
     };
     const loadTotal = (oper = 1) => {
       let NewItem = item;
       NewItem.count = Cant + oper;
-      MenuCart.setCartList(
-        MenuCart.cartList.map(el => el === item ? NewItem : el)
-      );
+      if ((Cant + oper) < 1) {
+        MenuCart.setCartList(
+          MenuCart.cartList.filter(el => el !== item)
+        );
+      } else {
+        MenuCart.setCartList(
+          MenuCart.cartList.map(el => el === item ? NewItem : el)
+        );
+      }
       MenuCart.setTotal(MenuCart.cartList.map(el => el.count * el.price).reduce(function(prev, current){return prev + current},0));
     }
   return (
@@ -28,7 +36,7 @@ export const CartItem = ({item = {item: 'Item', price: 0, category: null, count:
         <h4>$ {(Cant * item.price).toFixed(2)}</h4>
     </div>
     <div className='cart-count'>
-        <button onClick={() => DencrementCount()} disabled={Cant <= 1}>-</button>
+        <button onClick={() => DencrementCount()}>-</button>
         <input type='number'
         value={Cant} onChange={(e) => setCant(e.target.value)}/>
         <button onClick={() => IncrementCount()} disabled={Cant >= 99}>+</button>
